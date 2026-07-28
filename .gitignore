@@ -1,0 +1,20 @@
+# Godot
+.import/
+.export/
+.cache/
+.godot/
+*.import
+export_presets.cfg.lock
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Mono/C# (если используется)
+.mono/
+
+# Builds
+/build/
