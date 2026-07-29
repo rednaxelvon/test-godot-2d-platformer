@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource( 1 )
+position = Vector2(64, 200)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+animation = "idle"
+frames = SubResource( 1 )
+flip_h = false
+z_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource( 2 )
+position = Vector2(0, 96)
+
+[node name="FloorRay" type="RayCast2D" parent="Player"]
+cast_to = Vector2(0, 120)
+enabled = true
+
+[node name="AttackArea" type="Area2D" parent="Player"]
+monitoring = false
+monitorable = true
+collision_layer = 0
+collision_mask = 1
+
+[node name="AttackArea/CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+shape = SubResource( 3 )
+position = Vector2(48, 0)
+
+[ext_resource path="res://scenes/player/player.gd" type="Script" id=1]
+
+[sub_resource type="SpriteFrames" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2(48, 96)
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2(36, 20)

@@ -1,0 +1,11 @@
+[gd_scene load_steps=1 format=3]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="HUD/ScoreLabel" type="Label" parent="HUD"]
+text = "Score: 0"
+position = Vector2(16,16)
+
+[node name="HUD/LivesLabel" type="Label" parent="HUD"]
+text = "Lives: 3"
+position = Vector2(16,40)

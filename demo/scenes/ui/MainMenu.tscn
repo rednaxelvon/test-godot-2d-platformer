@@ -1,0 +1,11 @@
+[gd_scene load_steps=1 format=3]
+
+[node name="MainMenu" type="Control"]
+
+[node name="MainMenu/Title" type="Label" parent="MainMenu"]
+text = "Demo Platformer"
+rect_position = Vector2(200,120)
+
+[node name="MainMenu/StartButton" type="Button" parent="MainMenu"]
+text = "Start"
+rect_position = Vector2(260,200)

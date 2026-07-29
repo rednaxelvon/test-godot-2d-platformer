@@ -1,0 +1,14 @@
+; Engine configuration file.
+config_version=5
+
+[application]
+config/name="demo-platformer"
+run/main_scene="res://scenes/Level1.tscn"
+config/features=PackedStringArray("4.7")
+
+[display]
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[rendering]
+textures/canvas_textures/default_texture_filter=0

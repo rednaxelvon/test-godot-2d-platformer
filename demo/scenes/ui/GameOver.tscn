@@ -1,0 +1,11 @@
+[gd_scene load_steps=1 format=3]
+
+[node name="GameOver" type="Control"]
+
+[node name="GameOver/Title" type="Label" parent="GameOver"]
+text = "Game Over"
+rect_position = Vector2(220,120)
+
+[node name="GameOver/RestartButton" type="Button" parent="GameOver"]
+text = "Restart"
+rect_position = Vector2(260,200)
