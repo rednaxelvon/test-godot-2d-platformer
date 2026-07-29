@@ -11,14 +11,12 @@ extends CharacterBody2D
 @export var COYOTE_TIME: float = 0.12
 @export var JUMP_BUFFER_TIME: float = 0.12
 
-var velocity: Vector2 = Vector2.ZERO
 var facing_right: bool = true
-
 var coyote_timer: float = 0.0
 var jump_buffer_timer: float = 0.0
 
-onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
-onready var attack_area: Area2D = $AttackArea
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var attack_area: Area2D = $AttackArea
 
 func _ready():
 	if not is_in_group("player"):
@@ -74,7 +72,8 @@ func _physics_process(delta):
 		_do_attack()
 
 	_update_animation()
-	velocity = move_and_slide(velocity, Vector2.UP)
+	# use CharacterBody2D move_and_slide() without args
+	move_and_slide()
 
 func _do_attack():
 	attack_area.monitoring = true

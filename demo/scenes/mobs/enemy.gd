@@ -4,9 +4,9 @@ extends CharacterBody2D
 @export var START_HEALTH: int = 1
 var health: int
 
-onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
-onready var patrol_a: Position2D = $PatrolA
-onready var patrol_b: Position2D = $PatrolB
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var patrol_a: Node2D = $PatrolA
+@onready var patrol_b: Node2D = $PatrolB
 
 var target_pos: Vector2
 
@@ -17,7 +17,7 @@ func _ready():
 func _physics_process(delta):
 	var dir = (target_pos - global_position).normalized()
 	velocity.x = dir.x * SPEED
-	velocity = move_and_slide(velocity, Vector2.UP)
+	move_and_slide()
 	_check_reached()
 
 func _check_reached():
@@ -34,5 +34,6 @@ func take_damage(amount: int = 1):
 
 func die():
 	queue_free()
-	if has_node("/root/demo_game_manager"):
-		demo_game_manager.add_score(10)
+	var mgr = get_node_or_null("/root/demo_game_manager")
+	if mgr:
+		mgr.add_score(10)
